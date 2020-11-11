@@ -1,0 +1,380 @@
+﻿body{
+	background: teal;
+}
+*{
+	user-select: none;
+}
+#epld{
+	width: 60%;
+	margin: 10px;
+	border-radius: 10px;
+	position: relative;
+	left: 20%;
+	z-index: -1;
+
+}
+.nav-bar{
+	background: black;
+	width: 100%;
+	color: #888;
+	display: flex;
+	padding: 0px;
+	position: fixed;
+	flex-direction: row;
+	left: 0;
+	top: 0;
+}
+.nav-bar ul{
+	display: flex;
+	list-style-type: none;
+}
+.nav-bar ul li{
+	word-spacing: 2px;
+	margin: 10px; 
+}
+.nav-bar ul li a{
+	text-decoration: none;
+	color: #ddd;
+}
+.delete-container{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	z-index: 2;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 0; 
+	 visibility: hidden;
+}
+.delete-container  .open_delete{
+	background: #fff;
+	width: 70%;
+	z-index: 5;
+	position: relative;
+	padding: 10px;
+	border-radius: 10px;
+	transition: 0.3s ease-in-out;
+	top:-10px;
+	opacity: 0; 
+	 visibility: hidden; 
+	/* justify-content: center; */
+
+}
+.delete-container.active{
+	opacity: 1;
+	visibility: visible;
+}
+.delete-container  .open_delete.active{
+	top: 30px;
+	opacity: 1;
+	visibility: visible;
+}
+.delete-container  .open_delete b{
+	text-align: center;
+}
+.delete-container  .open_delete button{
+	padding: 6px;
+	width: 60px;
+	border-radius: 9px;
+	background: black;
+	border: 3px solid #555;
+	color: gold;
+	font: bold 13px Arial;
+	outline: none;
+
+}
+
+.delete-container  .open_delete  input[type="text"]{
+	width: 70%;
+	outline: none;
+	border: none;
+	margin: 10px;
+	border-bottom: 1.5px solid black;
+	color: #333;
+	padding: 10px;
+	font: 200 17px Arial;
+}
+
+.specific,.search-all{
+	background: #eee;
+	padding: 10px;
+	width: 90%;
+	border-radius: 8px;
+
+}
+.specific p,.search-all p{
+	font: bold 15px Arial;
+}
+.specific input[type="search"], .search-all input[type="search"]{
+	border: 0.5px solid #999;
+	outline: none;
+	font-weight: bold;
+	border-radius: 7px;
+	width: 70%;
+	letter-spacing: 1px;
+	padding: 6px;
+}
+.specific button,.search-all button{
+	color: gold;
+	background: #000;
+	outline: none;
+	width: 60px;
+	padding: 3.6px;
+	border: 3px solid #444;
+	border-radius: 6px;
+}
+
+.row-search{
+	display: grid;
+	grid-template-columns:repeat(auto-fill,minmax(360px,3fr));
+	grid-gap: 0 100px;
+
+	grid-template-rows: auto;
+}
+
+	/* position: absolute;
+	align-items: center;
+	justify-content: center;
+	display:grid;
+} */
+
+.row-part{
+	display: grid;
+	left: 10%;
+	grid-template-columns: repeat(auto-fill,minmax(360px,1fr));
+	grid-gap: 0 70px;
+	grid-template-rows: auto;
+}
+.open_add{
+	background: #ddd;
+	width:90%;
+	border-radius: 10px;
+	padding: 10px;
+	
+	
+}
+.part1 input , .part2 input{
+	border: 0.5px solid #999;
+	outline: none;
+	font-weight: bold;
+	border-radius: 7px;
+	width: 70%;
+	letter-spacing: 1px;
+	padding: 6px;
+	margin: 9px;
+}
+.part1 label .part2 label{
+	margin:10px;
+	margin-bottom: 10px;
+	font: 300 15px Arial;
+}
+.open_add p{
+	font: 400 17px Arial;
+	text-align: center!important;
+}
+.part2 button[type="submit"]{
+	padding: 3px;
+	width: 80px;
+	border-radius: 9px;
+	background: black;
+	border: 3px solid #555;
+	color: gold;
+	font: bold 13px Arial;
+	outline: none;
+
+}
+.part2 button[type="reset"]{
+	padding: 3px;
+	width: 80px;
+	border-radius: 9px;
+	background:rgb(0,0,0);
+	border: 3px solid #555;
+	color: gold;
+	font: bold 13px Arial;
+	float: right;
+	outline: none;
+}
+fieldset{
+	border-radius: 10px;
+	border: 1px solid gold;
+}
+legend{
+	padding: 10px;
+	color: gold;
+	background: teal;
+	font: 500 17px Arial;
+	border: 1px solid gold;
+	border-radius: 10px;
+}
+.update1{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(360px,1fr));
+	grid-template-rows: auto;
+	grid-gap: 0 70px;
+}
+.update1 figure{
+	background: rgba(0,0,0,0.8);
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+	font-style: oblique;
+	display: inline-block;
+	color: gold;
+}
+footer{
+	position:absolute;
+	margin: 0;
+	left: 0;
+	background: #222;
+	color: gold;
+	width: 100%;
+	font: status-bar 13px Arial;
+	font-style: oblique;
+}
+footer .more{
+	padding: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(240px,2fr));
+	grid-gap: 0 80px;
+	grid-template-rows: auto;
+}
+footer .copy{
+	background: #000;
+	color: #fff!important;
+	font-style: normal!important;
+	font: 500 14px Arial;
+	padding: 10px;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #000;
+
+}
+table td,th{
+	border: 1px sold #000;
+	padding: 7px;
+	font-size: 16px;
+}
+table tr:nth-child(odd){
+	background: #000;
+	color: gold;
+	
+
+}
+.result-container{
+	width:100%;
+	position: relative;
+	
+	display: block;
+}
+.table-results{
+	width: 100%;
+}
+.row-result{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(370px,1fr));
+	grid-template-rows: auto;
+	grid-gap: 0 10px;
+}
+ .row-result .form-part{
+	width: auto;
+	padding: 15px;
+	background: rgb(255,255,255);
+	display: block;
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 10px;
+	align-items: center;
+
+}
+.form-part p{
+	font: bold 17px Arial;
+}
+.form-part form{
+	display: flex;
+}
+.form-part button{
+	width: 150px;
+	outline: none;
+	border: 3px solid #444;
+	background: #000;
+	border-radius: 10px;
+	color: gold;
+	font: 500 15px Arial;
+	padding: 5px;
+	margin: 5px;
+}
+.form-part input{
+	width: 70%;
+	border: none;
+	border-bottom: 2px solid #222;
+	outline: none;
+	font: 400 16px Arial;
+
+}
+.subscribe-container{
+	width:100%;
+	height: 100%;
+	position: fixed;
+	background: rgba(0,0,0,0.7);
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 4;
+	opacity: 0;
+	visibility: hidden;
+}
+.subscribe-container.active{
+	opacity: 1;
+	visibility: visible;
+}
+
+.subscribe-container .subscribe-content{
+	width: 70%;
+	background: #eee;
+	position: relative;
+	padding: 14px;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 10px #444;
+	transition: 0.3s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+	top: -10%;
+}
+.subscribe-container .subscribe-content.active{
+	top: 5%;
+	opacity: 1;
+	visibility: visible;
+}
+.subscribe-container .subscribe-content input{
+	width: 70%;
+	border: none;
+	background: #eee;
+	border-bottom: 2px solid #000;
+	font: 600 15px Arial;
+	outline: none;
+}
+.subscribe-container .subscribe-content button{
+	width: 100px;
+	padding: 5px;
+	background: black;
+	color: gold;
+	border-radius: 10px;
+}
+.subscribe-container .subscribe-content form{
+	display: flex;
+}
+.subscribe-container .subscribe-content p{
+	font: bold 17px Arial;
+}
